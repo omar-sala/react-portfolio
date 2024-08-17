@@ -5,15 +5,22 @@
 3- Responsive Design (media query)
 */
 
+/* Ensure main content takes up the full height of the viewport */
 main.flex {
+  display: flex;
+  flex-direction: row; /* Align sections horizontally */
   gap: 2.64rem;
-  align-items: start;
+  align-items: flex-start;
+  min-height: 100vh;
+  justify-content: space-between;
+  position: relative; /* Added to position pagination correctly */
 }
 
 /* Start Left Section */
 main section.left-section.flex {
   flex-direction: column;
   gap: 10px;
+  flex-shrink: 0; /* Prevent the left section from shrinking */
 }
 
 main section.left-section.flex button {
@@ -43,15 +50,17 @@ main section.left-section.flex button.active {
 .light main section.left-section.flex button.active {
   border: 1px solid #000;
 }
-/* End Left Section */
 
 /* Start Right Section => Card */
 main section.right-section.flex {
-  flex-grow: 1;
+  flex-grow: 1; /* Allow the right section to take up the remaining space */
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 16px;
   row-gap: 2rem;
+  align-items: flex-start; /* Align cards to the start */
+  max-width: 100%;
+  /* margin-bottom: 2rem; */
 }
 
 .card {
@@ -63,11 +72,14 @@ main section.right-section.flex {
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.05)
   );
+  width: calc(33.33% - 32px);
+  max-width: 300px;
+  box-sizing: border-box;
+  padding: 15px;
 }
 
-.light .card,
-.light .card:hover {
-  border: none;
+.light .card {
+  color: #000;
 }
 
 .light .card:hover {
@@ -86,10 +98,6 @@ main section.right-section.flex {
   cursor: pointer;
 }
 
-.card img {
-  border-radius: 5px;
-}
-
 .card .box {
   padding: 1rem 0.4rem;
 }
@@ -106,49 +114,185 @@ main section.right-section.flex {
   margin-bottom: 1.1rem;
 }
 
-.card .box .icons {
-  justify-content: space-between;
+.card .techn {
+  padding-bottom: 15px;
 }
 
-.card .icon-link,
-.card .icon-github {
-  font-size: 1.2rem;
-  color: var(--subtitle);
-}
-
-.card .icon-link:hover,
-.card .icon-github:hover {
-  font-size: 1.25rem;
-  color: var(--icon-hover);
-  cursor: pointer;
-}
-
-.card a.link {
-  font-size: 0.9rem;
+.card a {
+  font-size: 1.1rem;
   color: var(--blue);
   margin-right: 12px;
+  text-decoration: underline;
 }
-/* End Right Section => Card */
 
-/* Start Responsive Design (media query) */
-@media (max-width: 600px) {
-  main.flex {
-    flex-direction: column;
-    gap: 2.64rem;
-    align-items: center;
+/* End Right Section */
+
+/* Start Pagination Styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Make sure the pagination takes the full width */
+  position: absolute;
+  bottom: 0;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px; /* Added border-radius for consistency */
+  transition: background-color 0.3s ease;
+}
+
+.light .pagination button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px; /* Added border-radius for consistency */
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  line-height: 30px;
+  font-weight: bold; /* Added font-weight for emphasis */
+}
+
+.light .pagination span {
+  color: #000;
+  line-height: 30px;
+  font-weight: bold; /* Added font-weight for emphasis */
+}
+/* End Pagination Styling */
+
+/* Filter Buttons */
+.filter-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px; /* Added border-radius for consistency */
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.filter-buttons button:focus {
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .card {
+    width: calc(50% - 16px);
+    max-width: 100%;
   }
 
-  main section.left-section.flex {
+  .pagination {
+    position: absolute;
+    margin-top: 20px;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .right-section.flex {
+    margin-bottom: 6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .right-section.flex {
+    margin-bottom: 4rem;
+  }
+
+  main.section.left-section.flex {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
   }
 
-  main section.left-section.flex button {
-    width: 7rem;
-    padding: 0.8rem 0;
+  main.section.left-section.flex button {
+    width: 8rem;
+    padding: 0.6rem 0;
     font-size: 0.9rem;
   }
+
+  .pagination {
+    position: absolute; /* Ensure pagination stays within the content flow */
+    margin-top: 1.5rem;
+    justify-content: center; /* Center pagination on the screen */
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .pagination button {
+    margin: 5px; /* Adjust button margins for better spacing */
+    padding: 8px 12px;
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
 }
-/* End Responsive Design (media query) */
+
+@media (max-width: 600px) {
+  main.flex {
+    flex-direction: column; /* Stack sections vertically */
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  main.section.left-section.flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  main.section.left-section.flex button {
+    width: 7rem; /* Narrower buttons */
+    padding: 0.6rem 0;
+    font-size: 0.8rem;
+  }
+
+  .card {
+    width: 100%; /* Make cards full-width */
+    max-width: 100%;
+  }
+
+  .pagination {
+    position: relative; /* Ensure pagination stays within the content flow */
+    margin-top: 1.5rem;
+    justify-content: center; /* Center pagination on the screen */
+    padding-bottom: 10px; /* Reduce padding for smaller screens */
+    flex-wrap: wrap; /* Allow pagination buttons to wrap */
+  }
+
+  .pagination button {
+    margin: 5px; /* Adjust button margins for better spacing */
+    padding: 8px 12px; /* Increase padding for better touch targets */
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+}

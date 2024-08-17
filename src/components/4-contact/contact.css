@@ -87,6 +87,24 @@ section.contact-us .contact-animation {
 }
 
 /* Start Responsive Design (media query) */
+@media (max-width: 900px) {
+  section.contact-us form {
+    width: 90%;
+  }
+
+  section.contact-us #email,
+  #message {
+    width: 100%;
+    margin-left: 0;
+    padding: 0.7rem;
+  }
+
+  section.contact-us .submit {
+    width: 40%;
+    align-self: center;
+  }
+}
+
 @media (max-width: 600px) {
   section.contact-us .animation {
     display: none;
@@ -95,7 +113,8 @@ section.contact-us .contact-animation {
   section.contact-us form {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 100%;
+    align-items: center;
   }
 
   section.contact-us form div.flex {
@@ -105,14 +124,14 @@ section.contact-us .contact-animation {
 
   section.contact-us #email,
   #message {
-    width: 300px;
+    width: 100%;
     margin-left: 0;
-    padding: 0.7rem 0;
+    padding: 0.7rem;
     margin-top: 1rem;
   }
 
   section.contact-us .submit {
-    width: 30%;
+    width: 50%;
     align-self: center;
   }
 }
