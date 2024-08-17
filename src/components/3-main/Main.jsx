@@ -81,7 +81,7 @@ function Main() {
   );
 
   return (
-    <main className="flex">
+    <main id="main-section" className="flex">
       <section className="left-section flex">
         {/* Filter Buttons */}
         <button

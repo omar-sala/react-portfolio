@@ -8,14 +8,22 @@ import contactAnimation from "../../animation/contact.json";
 const Contact = () => {
   const [state, handleSubmit] = useForm("mgvwyaaj");
   return (
-    <section className="contact-us">
+    <section id="contact-section" className="contact-us">
       <h1 className="title">
         <span className="icon-envelope"></span>Contact Us
       </h1>
       <p className="sub-title">
-        Contact us for more information and get notified when I publish
-        something new.
+        If you want to reach out, you can contact me via email or download my CV
+        below:
       </p>
+      <a
+        href="https://flowcv.com/resume/hrk7ssi62q"
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+      >
+        Download My CV
+      </a>
       <div style={{ justifyContent: "space" }} className="flex">
         <form onSubmit={handleSubmit} className="">
           <div className="flex">

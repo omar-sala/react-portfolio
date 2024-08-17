@@ -80,6 +80,21 @@ section.contact-us .contact-animation {
   margin-bottom: 80px;
 }
 
+/* Contac us */
+.contact-us a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.contact-us a:hover {
+  background-color: #0056b3;
+}
+
 @media (max-width: 1100px) {
   section.contact-us .contact-animation {
     display: none;

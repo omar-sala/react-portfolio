@@ -90,7 +90,7 @@ header .fixed {
   inset: 0;
   z-index: 11;
   background-color: rgba(40, 40, 48, 0.91);
-  border: 2px solid red;
+  text-align: center;
   backdrop-filter: blur(4px);
 }
 
@@ -107,10 +107,10 @@ header .fixed {
 }
 
 header .fixed ul.modal {
+  margin: auto;
   animation: mymove 0.77s 1;
   width: 75%;
   margin-inline: au;
-
   margin-top: 2rem;
   border-radius: 1rem;
   padding: 1rem 2rem;
@@ -141,12 +141,142 @@ header .fixed ul.modal li {
 /* End modal == pop up */
 
 /* Start Responsive Design (Media query) */
-@media (width < 600px) {
+/* Start Responsive Design (Media query) */
+@media (max-width: 768px) {
+  /* For tablets and smaller screens */
+  header.flex {
+    padding: 0 1.6rem;
+    margin-top: 1rem;
+  }
+
+  header.flex nav {
+    display: none;
+  }
+
+  header ul.flex {
+    gap: 12px;
+  }
+
+  header ul li a {
+    font-size: 0.85rem;
+  }
+
+  header button.menu {
+    display: block;
+  }
+
+  header button {
+    font-size: 1rem;
+  }
+
+  header .icon-menu,
+  header button.mode {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+
+  header .icon-close {
+    font-size: 1.3rem;
+  }
+
+  header .fixed ul.modal {
+    width: 85%;
+    padding: 1rem 1.5rem;
+  }
+
+  header .fixed ul.modal li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For mobile screens */
+  header.flex {
+    padding: 0 1.2rem;
+    margin-top: 0.8rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  header ul.flex {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  header ul li a {
+    font-size: 0.8rem;
+  }
+
+  header button.menu {
+    display: block;
+  }
+
+  header .icon-menu,
+  header button.mode {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  header .icon-close {
+    font-size: 1.2rem;
+  }
+
+  header .fixed ul.modal {
+    width: 95%;
+    padding: 0.8rem 1.2rem;
+  }
+
+  header .fixed ul.modal li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  /* For very small mobile screens */
+  header.flex {
+    padding: 0 0.8rem;
+    margin-top: 0.6rem;
+  }
+
+  header ul.flex {
+    gap: 6px;
+  }
+
+  header ul li a {
+    font-size: 0.75rem;
+  }
+
+  header button.menu {
+    display: block;
+  }
+
+  header .icon-menu,
+  header button.mode {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  header .icon-close {
+    font-size: 1rem;
+  }
+
+  header .fixed ul.modal {
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
+
+  header .fixed ul.modal li {
+    font-size: 0.85rem;
+  }
+}
+/* End Responsive Design (Media query) */
+
+/* @media (width < 600px) {
   header.flex nav {
     display: none;
   }
   header button.menu {
     display: block;
   }
-}
+} */
 /* End Responsive Design (Media query) */

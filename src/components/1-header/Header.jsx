@@ -33,19 +33,13 @@ const Header = () => {
       <nav>
         <ul className="flex">
           <li>
-            <a href="">About</a>
+            <a href="#hero-section">About</a>
           </li>
           <li>
-            <a href="">Articles</a>
+            <a href="#main-section">Projects</a>
           </li>
           <li>
-            <a href="">Projects</a>
-          </li>
-          <li>
-            <a href="">Speaking</a>
-          </li>
-          <li>
-            <a href="">Contact</a>
+            <a href="#contact-section">Contact</a>
           </li>
         </ul>
       </nav>
@@ -81,19 +75,13 @@ const Header = () => {
               />
             </li>
             <li>
-              <a href="">About</a>
+              <a href="#hero-section">About</a>
             </li>
             <li>
-              <a href="">Articles</a>
+              <a href="#main-section">Projects</a>
             </li>
             <li>
-              <a href="">Projects</a>
-            </li>
-            <li>
-              <a href="">Speaking</a>
-            </li>
-            <li>
-              <a href="">Contact</a>
+              <a href="#contact-section">Contact</a>
             </li>
           </ul>
         </div>
