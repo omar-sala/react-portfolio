@@ -1,19 +1,19 @@
-import React, { useRef } from "react";
-import "./hero.css";
-import Lottie from "lottie-react";
-import developerAnimation from "../../animation/developer.json";
-import { motion } from "framer-motion";
+import { useRef } from 'react'
+import './hero.css'
+import Lottie from 'lottie-react'
+import developerAnimation from '../../animation/developer.json'
+import { motion } from 'framer-motion'
 
 const Hero = () => {
-  const lottieRef = useRef();
+  const lottieRef = useRef()
   return (
     <section id="hero-section" className="hero flex">
       <div className="left-section">
         <div className="parent-avatar flex">
           <motion.img
-            initial={{ transform: "scale(0)" }}
-            animate={{ transform: "scale(1.1)" }}
-            transition={{ damping: 6, type: "spring", stiffness: 100 }}
+            initial={{ transform: 'scale(0)' }}
+            animate={{ transform: 'scale(1.1)' }}
+            transition={{ damping: 6, type: 'spring', stiffness: 100 }}
             src="./images/me.jpg"
             className="avatar"
             alt=""
@@ -48,7 +48,7 @@ const Hero = () => {
           <a href="https://github.com/omar-sala" target="_blank">
             <div className="icon icon-github"></div>
           </a>
-          <a href="https://www.linkedin.com/in/om-salama/" target="_blank">
+          <a href="https://www.linkedin.com/in/omarsalama11/" target="_blank">
             <div className="icon icon-linkedin"></div>
           </a>
         </div>
@@ -57,13 +57,13 @@ const Hero = () => {
         <Lottie
           lottieRef={lottieRef}
           onLoadedImages={() => {
-            lottieRef.current.setSpeed(0.5);
+            lottieRef.current.setSpeed(0.5)
           }}
           animationData={developerAnimation}
         />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

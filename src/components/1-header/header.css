@@ -141,7 +141,6 @@ header .fixed ul.modal li {
 /* End modal == pop up */
 
 /* Start Responsive Design (Media query) */
-/* Start Responsive Design (Media query) */
 @media (max-width: 768px) {
   /* For tablets and smaller screens */
   header.flex {
@@ -269,14 +268,3 @@ header .fixed ul.modal li {
     font-size: 0.85rem;
   }
 }
-/* End Responsive Design (Media query) */
-
-/* @media (width < 600px) {
-  header.flex nav {
-    display: none;
-  }
-  header button.menu {
-    display: block;
-  }
-} */
-/* End Responsive Design (Media query) */

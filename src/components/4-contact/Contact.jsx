@@ -1,12 +1,12 @@
-import React from "react";
-import "./contact.css";
-import { useForm, ValidationError } from "@formspree/react";
-import Lottie from "lottie-react";
-import doneAnimation from "../../animation/done.json";
-import contactAnimation from "../../animation/contact.json";
+import React from 'react'
+import './contact.css'
+import { useForm, ValidationError } from '@formspree/react'
+import Lottie from 'lottie-react'
+import doneAnimation from '../../animation/done.json'
+import contactAnimation from '../../animation/contact.json'
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("mgvwyaaj");
+  const [state, handleSubmit] = useForm('mgvwyaaj')
   return (
     <section id="contact-section" className="contact-us">
       <h1 className="title">
@@ -24,12 +24,12 @@ const Contact = () => {
       >
         Download My CV
       </a>
-      <div style={{ justifyContent: "space" }} className="flex">
+      <div style={{ justifyContent: 'space' }} className="flex">
         <form onSubmit={handleSubmit} className="">
           <div className="flex">
             <label htmlFor="email">Email Address:</label>
             <input
-              autoComplete="off"
+              autoComplete="on"
               required
               type="email"
               name="email"
@@ -42,7 +42,7 @@ const Contact = () => {
             />
           </div>
 
-          <div className="flex" style={{ marginTop: "24px" }}>
+          <div className="flex" style={{ marginTop: '24px' }}>
             <label htmlFor="message">Your message:</label>
             <textarea required name="message" id="message"></textarea>
             <ValidationError
@@ -53,12 +53,12 @@ const Contact = () => {
           </div>
 
           <button type="submit" disabled={state.submitting} className="submit">
-            {state.submitting ? "Submitting..." : "Submit"}
+            {state.submitting ? 'Submitting...' : 'Submit'}
           </button>
           {state.succeeded && (
             <p
               className="flex"
-              style={{ fontSize: "18px", marginTop: "1.7rem" }}
+              style={{ fontSize: '18px', marginTop: '1.7rem' }}
             >
               <Lottie
                 loop={false}
@@ -79,7 +79,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
